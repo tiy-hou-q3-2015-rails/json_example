@@ -1,0 +1,35 @@
+<h1>Contacts#new</h1>
+
+<% if @contact.errors.any? %>
+  <div class="errors">
+    <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @contact do |f| %>
+  <div>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :email %><br/>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :profile, "Profile Image" %><br/>
+    <%= f.attachment_field :profile %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
