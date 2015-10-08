@@ -3,9 +3,5 @@
 
 <%= link_to "New Contact", new_contact_path %>
 
-<% @contacts.each do |contact| %>
-  <h5><%= contact.full_name %></h5>
 
-  <%= image_tag attachment_url(contact, :profile) %>
-  <hr>
-<% end %>
+<%= react_component 'ContactList', @contacts_json, {prerender: true} %>

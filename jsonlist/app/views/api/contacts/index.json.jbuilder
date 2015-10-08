@@ -4,5 +4,6 @@ json.contacts @contacts do |contact|
   json.last_name contact.last_name
   json.full_name contact.full_name
   json.url contact_path(id: contact.id)
-  json.profile_url attachment_url(contact, :profile, :fill, 500, 500, format: "png")
+  json.thumbnail_url attachment_url(contact, :profile, :fill, 100, 100, format: 'png')
+  json.profile_url attachment_url(contact, :profile, :fill, 500, 500, format: 'png')
 end
