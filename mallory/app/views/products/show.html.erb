@@ -1,0 +1,16 @@
+<h1><%= @product.item %></h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag "#{@product.img_file}.jpg", class: "img-responsive" %>
+  </div>
+  <div class="col-md-6">
+    Category: <%= @product.category %>
+    <br/>
+    Condition: <%= @product.condition %>
+    <%= simple_format @product.description %>
+
+    <%= number_to_currency @product.price %>
+    <br/>
+    <%= @product.dimension_w %> x <%= @product.dimension_h %> x <%= @product.dimension_l %>
+  </div>
