@@ -12,15 +12,26 @@ var Room = React.createClass({
 
   fetchMessages(){
     var component = this;
-    fetch("/api/rooms/" + this.state.room.id + ".json").then(function(response){
-      response.json().then(function(json){
+
+    $.getJSON("/api/rooms/" + this.state.room.id + ".json")
+      .done(function(json){
         component.setState({room: json.room});
+
+        // Scroll to bottom of "messages"
       })
-    })
+
+
+    // fetch("/api/rooms/" + this.state.room.id + ".json", {credentials: 'include'}).then(function(response){
+    //   response.json().then(function(json){
+    //
+    //   })
+    // })
   },
 
   componentDidMount(){
     this.fetchMessages();
+    // scroll to bottom of messages
+    $('.messages').animate({scrollTop:(5400)}); // I made 5400 up
     this.messageInterval = setInterval(this.fetchMessages, 3000);
   },
 

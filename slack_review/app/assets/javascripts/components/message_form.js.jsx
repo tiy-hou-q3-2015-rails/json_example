@@ -12,6 +12,12 @@ var MessageForm = React.createClass({
 
     $.post("/api/rooms/" + this.props.room.id + "/messages.json", messageJSON).then(function(json){
       component.refs.body.getDOMNode().value = "";
+
+      // To get the UX that slack has:
+      // Immediately add the message to the page
+      // Scroll to it
+      // But that's hard. So let's refresh the browser instead. 
+      window.location = window.location;
     });
   },
 

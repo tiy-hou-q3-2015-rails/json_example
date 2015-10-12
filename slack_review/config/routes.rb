@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'signin' => 'sessions#new', as: :sign_in
+  post "signin" => 'sessions#create'
+
   root 'rooms#index'
 
   get 'rooms/:id' => 'rooms#show', as: :room

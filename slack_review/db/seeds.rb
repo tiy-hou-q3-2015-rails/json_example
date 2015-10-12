@@ -1,10 +1,10 @@
 taytay = Room.create! name: "TayTay"
 trains = Room.create! name: "#trains"
 
-jwo = User.create! username: "jwo"
-dorton = User.create! username: "dorton"
-neal = User.create! username: "neal"
-caroline = User.create! username: "caroline"
+jwo = User.create! username: "jwo", password: "12345678"
+dorton = User.create! username: "dorton", password: "12345678"
+neal = User.create! username: "neal", password: "12345678"
+caroline = User.create! username: "caroline", password: "12345678"
 
 Message.create! room: taytay, user: jwo, body: "omg did you see the new video?"
 Message.create! room: taytay, user: caroline, body: "soooooo good"
